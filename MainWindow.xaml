@@ -1,0 +1,20 @@
+﻿<Window x:Class="GeoCodeDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="441" Width="611" xmlns:esri="http://schemas.esri.com/arcgis/client/2009">
+    <Grid>
+        <TextBox Height="39" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textBoxAdd" VerticalAlignment="Top" Width="110" Text="输入地址（如:广州市广州大道中）" AcceptsReturn="True" GotFocus="textBoxAdd_GotFocus" LostFocus="textBoxAdd_LostFocus" />
+        <Button Content="查询坐标" Height="57" HorizontalAlignment="Left" Margin="138,0,0,0" Name="buttonSearchCoord" VerticalAlignment="Top" Width="61" Click="buttonSearchCoord_Click" />
+        <esri:Map Background="White" Height="273" HorizontalAlignment="Left" Margin="12,117,0,0" Name="map1" VerticalAlignment="Top" Width="565" WrapAround="True" IsLogoVisible="False">
+            <esri:Map.Layers>
+                <esri:LayerCollection>
+                    <esri:ArcGISTiledMapServiceLayer Url="http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer" />
+              
+                </esri:LayerCollection>
+            </esri:Map.Layers>
+        </esri:Map>
+        <TextBox AcceptsReturn="True" Height="31" HorizontalAlignment="Left" Margin="12,68,0,0" Name="textBoxResult" Text="广州：23.129163, 113.26443500000005" VerticalAlignment="Top" Width="522" />
+        <TextBox AcceptsReturn="True" Height="39" HorizontalAlignment="Left" Margin="243,12,0,0" Name="textBoxCoord" Text="输入坐标（如:113.10，23.00）" VerticalAlignment="Top" Width="110" GotFocus="textBoxCoord_GotFocus" LostFocus="textBoxCoord_LostFocus" />
+        <Button Content="查询地址" Height="57" HorizontalAlignment="Left" Margin="377,0,0,0" Name="buttonSearchAddress" VerticalAlignment="Top" Width="61" Click="buttonSearchAddress_Click" />
+    </Grid>
+</Window>
